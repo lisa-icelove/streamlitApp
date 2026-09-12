@@ -8,10 +8,10 @@ if "number2" not in st.session_state:
     st.session_state.number2=None
 
 if "a" not in st.session_state:
-    st.session_state.a=0
+    st.session_state.a=""
 
 if "q" not in st.session_state:
-    st.session_state.q=0
+    st.session_state.q=""
 #入力
 if st.button("1"):
     st.session_state.a=f"{st.session_state.a}{str(1)}"
