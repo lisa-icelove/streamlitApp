@@ -23,7 +23,7 @@ if "a" not in st.session_state:
 # 入力開始
 if st.button("数値を入力"):
     st.session_state.input_mode = True
-    st.session_state.a=st.session_state.number1
+    st.session_state.number1=st.session_state.a
 
 # 入力画面
 if st.session_state.input_mode:
@@ -34,8 +34,9 @@ if st.session_state.input_mode:
 
 
 if st.button("完了"):
-    if st.session_state.a==st.session_state.number1:
-        st.session_state.a=st.session_state.number2
+    if st.session_state.number1==st.session_state.a:
+        st.session_state.number2=st.session_state.a
+        st.session_state.a=0
 
 if st.button("1"):
     st.session_state.a+=1
