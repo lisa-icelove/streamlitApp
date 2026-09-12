@@ -75,16 +75,16 @@ if st.button("0"):
         st.session_state.number2="None"
 
 if st.button("+"):
-    if st.session_state.a=="":
-        st.session_state.a="+"
-    else :
-        st.session_state.q="+"
+    st.session_state.q="+"
 
 if st.button("-"):
-    if st.session_state.a=="":
-        st.session_state.a="-"
-    else :
-        st.session_state.q="-"
+    st.session_state.q="-"
+
+if st.button("符号を - に変更"):
+    st.session_state.a="-" + st.session_state.a
+
+if st.button("符号を + に変更"):
+    st.session_state.a="+" + st.session_state.a
 #計算
 if st.button("計算"):
     if st.session_state.q=="+":
