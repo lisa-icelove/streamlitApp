@@ -2,10 +2,6 @@ import streamlit as st
 
 st.title("電卓計算アプリ")
 
-import streamlit as st
-
-st.title("電卓計算アプリ")
-
 # 現在入力中の値
 if "a" not in st.session_state:
     st.session_state.a = 0
@@ -22,9 +18,9 @@ if "number2" not in st.session_state:
 st.write("現在の値:", st.session_state.a)
 
 
-# 1を加算
+# 数値を入力
 if st.button("1"):
-    st.session_state.a += 1
+    st.session_state.a += str(1)
 
 
 # 完了
@@ -47,3 +43,8 @@ if st.button("表示"):
 
     st.write("number1 =", st.session_state.number1)
     st.write("number2 =", st.session_state.number2)
+
+#数値をリセット
+if st.button("数値リセット"):
+    st.session_state.number1=None
+    st.session_state.number2=None
