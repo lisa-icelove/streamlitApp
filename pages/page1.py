@@ -15,6 +15,8 @@ if "q" not in st.session_state:
 #入力
 if st.button("1"):
     st.session_state.a=f"{st.session_state.a}{str(1)}"
+    if st.session_state.number1 != None:
+        st.session_state.number2="NNN"
 
 if st.button("+"):
     st.session_state.q="+"
@@ -30,6 +32,6 @@ st.write(f"現在の計算：{st.session_state.number1}{st.session_state.q}{st.s
 if st.button("完了"):
     if st.session_state.number1==None:
         st.session_state.number1=st.session_state.a
-    elif st.session_state.number2==None:
+    elif st.session_state.number2=="NNN":
         st.session_state.number2=st.session_state.a
     st.session_state.a=0
