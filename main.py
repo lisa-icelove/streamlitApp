@@ -20,7 +20,7 @@ st.write("現在の値:", st.session_state.a)
 
 # 数値を入力
 if st.button("1"):
-    st.session_state.a += str(1)
+    st.session_state.a = str(1)
 
 
 # 完了
