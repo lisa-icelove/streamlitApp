@@ -98,7 +98,7 @@ if st.button("符号を - に変更"):
 if st.button("符号を + に変更"):
     st.session_state.a = st.session_state.a.replace("-", "")
     st.session_state.a="+" + st.session_state.a
-    
+
 #計算
 if st.button("計算"):
     if st.session_state.q=="+":
@@ -120,3 +120,10 @@ if st.button("完了"):
     elif st.session_state.number2=="None":
         st.session_state.number2=st.session_state.a
     st.session_state.a=""
+
+#変数リセット
+if st.button("数値リセット"):
+    st.session_state.number1=None
+    st.session_state.number2=None
+    st.session_state.a=""
+    st.session_state.q=""
