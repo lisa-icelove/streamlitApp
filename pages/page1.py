@@ -4,6 +4,9 @@ import streamlit as st
 if "number1" not in st.session_state:
     st.session_state.number1=None
 
+if "number2" not in st.session_state:
+    st.session_state.number2=None
+
 if "a" not in st.session_state:
     st.session_state.a=0
 
