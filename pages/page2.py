@@ -71,6 +71,9 @@ if "a" not in st.session_state:
 if "q" not in st.session_state:
     st.session_state.q = ""
 
+if "k" not in st.session_state:
+    st.session_state.k=""
+
 
 # ============================================================
 # タイトル
@@ -243,28 +246,20 @@ with col2:
     if st.button("＝ 計算", use_container_width=True):
 
         if st.session_state.q == "+":
-            st.write(
-                int(st.session_state.number1)
-                + int(st.session_state.number2)
-            )
+            st.session_state.k=int(st.session_state.number1)+ int(st.session_state.number2)
+            st.write(st.session_state.k)
 
         elif st.session_state.q == "-":
-            st.write(
-                int(st.session_state.number1)
-                - int(st.session_state.number2)
-            )
+            st.session_state.k=int(st.session_state.number1)- int(st.session_state.number2)
+            st.write(st.session_state.k)
 
         elif st.session_state.q == "*":
-            st.write(
-                int(st.session_state.number1)
-                * int(st.session_state.number2)
-            )
+            st.session_state.k=int(st.session_state.number1)* int(st.session_state.number2)
+            st.write(st.session_state.k)
 
         elif st.session_state.q == "/":
-            st.write(
-                int(st.session_state.number1)
-                / int(st.session_state.number2)
-            )
+            st.session_state.k=int(st.session_state.number1) / int(st.session_state.number2)
+            st.write(st.session_state.k)
 
 
 with col3:
@@ -274,6 +269,7 @@ with col3:
         st.session_state.number2 = None
         st.session_state.a = ""
         st.session_state.q = ""
+        st.session_state.k = None
 
 
 # ============================================================
@@ -286,3 +282,4 @@ with st.expander("現在の変数を確認"):
     st.write("q =", st.session_state.q)
     st.write("number2 =", st.session_state.number2)
     st.write("a =", st.session_state.a)
+    st.write("k =", st.session_state.k)
