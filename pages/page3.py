@@ -64,6 +64,14 @@ if st.button("変更する単位を確定"):
     st.session_state.saki=tan
 moto=st.session_state.moto
 saki=st.session_state.saki
-mver=st.session_state.number*tani[moto]
-sber=mver/tani[saki]
-st.write(f"結果　元の単位：{st.session_state.number}{st.session_state.moto}→{sber}{st.session_state.saki}")
+if moto != "" and saki != "":
+    mver = st.session_state.number * tani[moto]
+    sber = mver / tani[saki]
+
+    st.write(
+        f"結果　元の単位："
+        f"{st.session_state.number}{moto}"
+        f" → {sber}{saki}"
+    )
+else:
+    st.write("元の単位と変更する単位を選択してください")
