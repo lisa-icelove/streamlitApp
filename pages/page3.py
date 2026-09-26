@@ -129,8 +129,9 @@ if st.session_state.moto != "" and st.session_state.saki != "":
     st.write(
         f"結果　元の単位："
         f"{st.session_state.number}{st.session_state.moto}"
-        f"変更後の単位："
-        f" → {sber}{st.session_state.saki}"
+        f"　→"
+        f"　変更後の単位："
+        f"{sber}{st.session_state.saki}"
     )
 else:
     st.write("元の単位と変更する単位を選択してください")
