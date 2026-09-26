@@ -1,6 +1,5 @@
 import streamlit as st
 st.title("単位変換アプリ")
-st.write("長さ(m)")
 if "moto" not in st.session_state:
     st.session_state.moto=""
 if "saki" not in st.session_state:
@@ -36,6 +35,7 @@ tani={
     "m³": 1000,
 }
 st.session_state.number=st.number_input("数値を入力してください")
+st.write("長さ(m)")
 col1,col2,col3,col4,col5,col6,col7=st.columns(7)
 with col1:
     if st.button("km"):
@@ -58,6 +58,65 @@ with col6:
 with col7:
     if st.button("mm"):
         st.session_state.tan="mm"
+st.write("重さ(g)")
+col1,col2,col3,col4,col5,col6,col7=st.columns(7)
+with col1:
+    if st.button("kg"):
+        st.session_state.tan="kg"
+with col2:
+    if st.button("hg"):
+        st.session_state.tan="hg"
+with col3:
+    if st.button("dag"):
+        st.session_state.tan="dag"
+with col4:
+    if st.button("g"):
+        st.session_state.tan="g"
+with col5:
+    if st.button("dg"):
+        st.session_state.tan="dg"
+with col6:
+    if st.button("cg"):
+        st.session_state.tan="cg"
+with col7:
+    if st.button("mg"):
+        st.session_state.tan="mg"
+st.write("時間(秒)")
+col1,col2,col3,col4=st.columns(4)
+with col1:
+    if st.button("秒"):
+        st.session_state.tan="秒"
+with col2:
+    if st.button("分"):
+        st.session_state.tan="分"
+with col3:
+    if st.button("時間"):
+        st.session_state.tan="時間"
+with col4:
+    if st.button("日"):
+        st.session_state.tan="日"
+st.write("面積(m²)")
+col1,col2,col3,col4=st.columns(4)
+with col1:
+    if st.button("cm²"):
+        st.session_state.tan="cm²"
+with col2:
+    if st.button("m²"):
+        st.session_state.tan="m²"
+with col3:
+    if st.button("km²"):
+        st.session_state.tan="km²"
+st.write("体積(m³)")
+col1,col2,col3,col4=st.columns(4)
+with col1:
+    if st.button("cm³"):
+        st.session_state.tan="cm³"
+with col2:
+    if st.button("m³"):
+        st.session_state.tan="m³"
+with col3:
+    if st.button("km³"):
+        st.session_state.tan="km³"
 st.write(f"現在選択中の単位:{st.session_state.tan}")
 if st.button("元となる単位を確定"):
     st.session_state.moto=st.session_state.tan
@@ -70,6 +129,7 @@ if st.session_state.moto != "" and st.session_state.saki != "":
     st.write(
         f"結果　元の単位："
         f"{st.session_state.number}{st.session_state.moto}"
+        f"変更後の単位："
         f" → {sber}{st.session_state.saki}"
     )
 else:
