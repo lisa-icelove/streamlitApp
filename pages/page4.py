@@ -148,7 +148,7 @@ tani = {
 
     "cm³": 0.000001,
     "m³": 1,
-    "km³": 1_000_000_000,
+    "km³": 1000000000,
 }
 
 
@@ -293,23 +293,23 @@ with col3:
 # 体積
 # =========================
 st.markdown(
-    '<div class="category">🧊 体積</div>',
+    '<div class="category">🧊 体積(m³)</div>',
     unsafe_allow_html=True
 )
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    if st.button("mL", use_container_width=True):
-        st.session_state.tan = "mL"
+    if st.button("cm³", use_container_width=True):
+        st.session_state.tan = "cm³"
 
 with col2:
-    if st.button("L", use_container_width=True):
-        st.session_state.tan = "L"
-
-with col3:
     if st.button("m³", use_container_width=True):
         st.session_state.tan = "m³"
+
+with col3:
+    if st.button("km³", use_container_width=True):
+        st.session_state.tan = "km³"
 
 
 # =========================
