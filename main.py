@@ -7,4 +7,4 @@ st.write("page2:page1の電卓計算アプリのUIをAIにやってもらった�
 st.write("page3:単位変換アプリ")
 st.write("page4:page3の単位変換アプリのUIをAIにやってもらったもの")
 st.write("page5:税込み＆税抜き計算アプリ")
-st.write("page6:page5の税込み＆税抜き計算アプリのUIをAIにやってもらったもの")
+st.write("page6:page5の税込み＆税抜き計算アプリのUIをAIにやってもらったもの（UIでうまくできていないなところあり（システムとしては機能する））")
