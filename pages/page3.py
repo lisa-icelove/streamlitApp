@@ -7,6 +7,8 @@ if "saki" not in st.session_state:
     st.session_state.saki=""
 if "number" not in st.session_state:
     st.session_state.number=0
+if "tan" not in st.session_state:
+    st.session_state.tan=""
 tani={
     "km":1000,
     "hm":100,
@@ -33,45 +35,42 @@ tani={
     "L": 1,
     "m³": 1000,
 }
-tan=""
 st.session_state.number=st.number_input("数値を入力してください")
 col1,col2,col3,col4,col5,col6,col7=st.columns(7)
 with col1:
     if st.button("km"):
-        tan="km"
+        st.session_state.tan="km"
 with col2:
     if st.button("hm"):
-        tan="hm"
+        st.session_state.tan="hm"
 with col3:
     if st.button("dam"):
-        tan="dam"
+        st.session_state.tan="dam"
 with col4:
     if st.button("m"):
-        tan="m"
+        st.session_state.tan="m"
 with col5:
     if st.button("dm"):
-        tan="dm"
+        st.session_state.tan="dm"
 with col6:
     if st.button("cm"):
-        tan="cm"
+        st.session_state.tan="cm"
 with col7:
     if st.button("mm"):
-        tan="mm"
-st.write(f"現在選択中の単位:{tan}")
+        st.session_state.tan="mm"
+st.write(f"現在選択中の単位:{st.session_state.tan}")
 if st.button("元となる単位を確定"):
-    st.session_state.moto=tan
+    st.session_state.moto=st.session_state.tan
 if st.button("変更する単位を確定"):
-    st.session_state.saki=tan
-moto=st.session_state.moto
-saki=st.session_state.saki
-if moto != "" and saki != "":
-    mver = st.session_state.number * tani[moto]
-    sber = mver / tani[saki]
+    st.session_state.saki=st.session_state.tan
+if st.session_state.moto != "" and st.session_state.saki != "":
+    mver = st.session_state.number * tani[st.session_state.moto]
+    sber = mver / tani[st.session_state.saki]
 
     st.write(
         f"結果　元の単位："
-        f"{st.session_state.number}{moto}"
-        f" → {sber}{saki}"
+        f"{st.session_state.number}{st.session_state.moto}"
+        f" → {sber}{st.session_state.saki}"
     )
 else:
     st.write("元の単位と変更する単位を選択してください")
