@@ -21,7 +21,7 @@ x=st.radio(
 )
 st.write("補足：消費税が8％になるものは飲食料品（※酒類(アルコール分1%以上)・外食などを除く）と、新聞（定期購読契約のもの）です")
 if x=="その他":
-    st.session_state.y=int(st.number_input("その他の場合はここに税率を入力",format="%d％"))
+    st.session_state.y=st.number_input("その他の場合はここに税率を入力",format="%d％")
 
 
 
