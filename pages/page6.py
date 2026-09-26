@@ -1,39 +1,39 @@
 import streamlit as st
 import math as m
 
-#========================================
-#ページ設定
-#========================================
+# ========================================
+# ページ設定
+# ========================================
 st.set_page_config(
     page_title="税込み＆税抜き計算アプリ",
-    page_icon="💰"
+    page_icon="💰",
     layout="centered"
 )
 
 
-#========================================
-#CSS
-#========================================
+# ========================================
+# CSS
+# ========================================
 st.markdown("""
 <style>
 
-body{
-    background-color: #f5f7fb
+body {
+    background-color: #f5f7fb;
 }
 
 /* タイトル */
-.title{
+.title {
     text-align: center;
     font-size: 38px;
     font-weight: bold;
-    color: #2563eb
-    margin-bottom: 5px
+    color: #2563eb;
+    margin-bottom: 5px;
 }
 
 .subtitle {
     text-align: center;
-    color: #6b7280
-    font-size: 16px
+    color: #6b7280;
+    font-size: 16px;
     margin-bottom: 30px;
 }
 
@@ -59,7 +59,7 @@ body{
 }
 
 /* 計算ボタン */
-liv.stButton > button {
+div.stButton > button {
     width: 100%;
     height: 50px;
     border-radius: 12px;
@@ -70,7 +70,7 @@ liv.stButton > button {
     font-weight: bold;
 }
 
-liv.stButton > button:hover {
+div.stButton > button:hover {
     background-color: #1d4ed8;
     color: white;
 }
@@ -87,24 +87,24 @@ liv.stButton > button:hover {
     border-radius: 18px;
     margin-top: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(37,99,235,0.2);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
 }
 
-.result-title{
+.result-title {
     text-align: center;
     font-size: 18px;
     opacity: 0.9;
     margin-bottom: 15px;
 }
 
-.result-row{
+.result-row {
     display: flex;
     justify-content: space-between;
     font-size: 18px;
-    padding:8px 0;
+    padding: 8px 0;
 }
 
-.result-main{
+.result-main {
     font-size: 28px;
     font-weight: bold;
     text-align: center;
@@ -119,11 +119,12 @@ liv.stButton > button:hover {
 }
 
 </style>
-""",unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
-#========================================
-#タイトル
-#========================================
+
+# ========================================
+# タイトル
+# ========================================
 st.markdown(
     '<div class="title">💰 税込み＆税抜き計算アプリ</div>',
     unsafe_allow_html=True
@@ -394,3 +395,4 @@ elif z == "税抜き":
 st.markdown(
     '<div class="note">※ 端数処理は選択した方法に従って計算されます。</div>',
     unsafe_allow_html=True
+)
