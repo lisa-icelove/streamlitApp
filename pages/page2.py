@@ -270,16 +270,3 @@ with col3:
         st.session_state.a = ""
         st.session_state.q = ""
         st.session_state.k = None
-
-
-# ============================================================
-# デバッグ用表示
-# ============================================================
-
-with st.expander("現在の変数を確認"):
-
-    st.write("number1 =", st.session_state.number1)
-    st.write("q =", st.session_state.q)
-    st.write("number2 =", st.session_state.number2)
-    st.write("a =", st.session_state.a)
-    st.write("k =", st.session_state.k)
