@@ -13,91 +13,114 @@ if "a" not in st.session_state:
 if "q" not in st.session_state:
     st.session_state.q=""
 #入力
+col1,col2,col3,col4=st.columns(4)
+#----------------------------------------------------------------
+
+with col1:
+    if st.button("7"):
+        st.session_state.a=f"{st.session_state.a}{str(7)}"
+        if st.session_state.number1 != None and st.session_state.number2 != "None":
+            st.session_state.number2="None"
 
 #----------------------------------------------------------------
-if st.button("1"):
-    st.session_state.a=f"{st.session_state.a}{str(1)}"
-    if st.session_state.number1 != None and st.session_state.number2 != "None":
-        st.session_state.number2="None"
+with col2:
+    if st.button("8"):
+        st.session_state.a=f"{st.session_state.a}{str(8)}"
+        if st.session_state.number1 != None and st.session_state.number2 != "None":
+            st.session_state.number2="None"
 
 #----------------------------------------------------------------
-if st.button("2"):
-    st.session_state.a=f"{st.session_state.a}{str(2)}"
-    if st.session_state.number1 != None and st.session_state.number2 != "None":
-        st.session_state.number2="None"
+with col3:
+    if st.button("9"):
+        st.session_state.a=f"{st.session_state.a}{str(9)}"
+        if st.session_state.number1 != None and st.session_state.number2 != "None":
+            st.session_state.number2="None"
 
 #----------------------------------------------------------------
-if st.button("3"):
-    st.session_state.a=f"{st.session_state.a}{str(3)}"
-    if st.session_state.number1 != None and st.session_state.number2 != "None":
-        st.session_state.number2="None"
+with col4:
+    if st.button("÷"):
+        st.session_state.q="/"
+
+col1,col2,col3,col4=st.columns(4)
+#----------------------------------------------------------------
+
+with col1:
+    if st.button("4"):
+        st.session_state.a=f"{st.session_state.a}{str(4)}"
+        if st.session_state.number1 != None and st.session_state.number2 != "None":
+            st.session_state.number2="None"
 
 #----------------------------------------------------------------
-if st.button("4"):
-    st.session_state.a=f"{st.session_state.a}{str(4)}"
-    if st.session_state.number1 != None and st.session_state.number2 != "None":
-        st.session_state.number2="None"
+with col2:
+    if st.button("5"):
+        st.session_state.a=f"{st.session_state.a}{str(5)}"
+        if st.session_state.number1 != None and st.session_state.number2 != "None":
+            st.session_state.number2="None"
 
 #----------------------------------------------------------------
-if st.button("5"):
-    st.session_state.a=f"{st.session_state.a}{str(5)}"
-    if st.session_state.number1 != None and st.session_state.number2 != "None":
-        st.session_state.number2="None"
+with col3:
+    if st.button("6"):
+        st.session_state.a=f"{st.session_state.a}{str(6)}"
+        if st.session_state.number1 != None and st.session_state.number2 != "None":
+            st.session_state.number2="None"
+#----------------------------------------------------------------
+with col4:
+    if st.button("-"):
+        st.session_state.q="-"
+
+col1,col2,col3,col4=st.columns(4)
+#----------------------------------------------------------------
+with col1:
+    if st.button("1"):
+        st.session_state.a=f"{st.session_state.a}{str(1)}"
+        if st.session_state.number1 != None and st.session_state.number2 != "None":
+            st.session_state.number2="None"
 
 #----------------------------------------------------------------
-if st.button("6"):
-    st.session_state.a=f"{st.session_state.a}{str(6)}"
-    if st.session_state.number1 != None and st.session_state.number2 != "None":
-        st.session_state.number2="None"
+with col2:
+    if st.button("2"):
+        st.session_state.a=f"{st.session_state.a}{str(2)}"
+        if st.session_state.number1 != None and st.session_state.number2 != "None":
+            st.session_state.number2="None"
 
 #----------------------------------------------------------------
-if st.button("7"):
-    st.session_state.a=f"{st.session_state.a}{str(7)}"
-    if st.session_state.number1 != None and st.session_state.number2 != "None":
-        st.session_state.number2="None"
+with col3:
+    if st.button("3"):
+        st.session_state.a=f"{st.session_state.a}{str(3)}"
+        if st.session_state.number1 != None and st.session_state.number2 != "None":
+            st.session_state.number2="None"
 
 #----------------------------------------------------------------
-if st.button("8"):
-    st.session_state.a=f"{st.session_state.a}{str(8)}"
-    if st.session_state.number1 != None and st.session_state.number2 != "None":
-        st.session_state.number2="None"
+with col4:
+    if st.button("×"):
+        st.session_state.q="*"
+
+col1,col2=st.columns(2)
+#----------------------------------------------------------------
+
+with col1:
+    if st.button("0"):
+        st.session_state.a=f"{st.session_state.a}{str(0)}"
+        if st.session_state.number1 != None and st.session_state.number2 != "None":
+            st.session_state.number2="None"
 
 #----------------------------------------------------------------
-if st.button("9"):
-    st.session_state.a=f"{st.session_state.a}{str(9)}"
-    if st.session_state.number1 != None and st.session_state.number2 != "None":
-        st.session_state.number2="None"
+with col2:
+    if st.button("+"):
+        st.session_state.q="+"
+
+col1,col2=st.columns(2)
+#----------------------------------------------------------------
+with col1:
+    if st.button("符号を - に変更"):
+        st.session_state.a = st.session_state.a.replace("+", "")
+        st.session_state.a="-" + st.session_state.a
 
 #----------------------------------------------------------------
-if st.button("0"):
-    st.session_state.a=f"{st.session_state.a}{str(0)}"
-    if st.session_state.number1 != None and st.session_state.number2 != "None":
-        st.session_state.number2="None"
-#----------------------------------------------------------------
-if st.button("+"):
-    st.session_state.q="+"
-
-#----------------------------------------------------------------
-if st.button("-"):
-    st.session_state.q="-"
-
-#----------------------------------------------------------------
-if st.button("×"):
-    st.session_state.q="*"
-
-#----------------------------------------------------------------
-if st.button("÷"):
-    st.session_state.q="/"
-
-#----------------------------------------------------------------
-if st.button("符号を - に変更"):
-    st.session_state.a = st.session_state.a.replace("+", "")
-    st.session_state.a="-" + st.session_state.a
-
-#----------------------------------------------------------------
-if st.button("符号を + に変更"):
-    st.session_state.a = st.session_state.a.replace("-", "")
-    st.session_state.a="+" + st.session_state.a
+with col2:
+    if st.button("符号を + に変更"):
+        st.session_state.a = st.session_state.a.replace("-", "")
+        st.session_state.a="+" + st.session_state.a
 
 #計算
 if st.button("計算"):
