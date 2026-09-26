@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("電卓計算アプリ+単位変換アプリ")
+st.title("電卓計算アプリ+単位変換アプリ+税込み＆税抜き計算アプリ")
 
 st.write("page1:電卓計算アプリ（少し不具合あり）")
 st.write("page2:page1の電卓計算アプリのUIをAIにやってもらったもの（少し不具合あり）")
