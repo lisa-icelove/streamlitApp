@@ -10,7 +10,7 @@ if "y" not in st.session_state:
 if "w" not in st.session_state:
     st.session_state.w=0
 
-st.session_state.price=st.number_input("値段を入力してください",format="%d円")
+st.session_state.price=st.number_input("値段を入力してください（円）",format="%d")
 z=st.radio(
     "数値を税込みにするか税抜きにするか選んでください",
     ["税込み","税抜き"]
@@ -21,7 +21,7 @@ x=st.radio(
 )
 st.write("補足：消費税が8％になるものは飲食料品（※酒類(アルコール分1%以上)・外食などを除く）と、新聞（定期購読契約のもの）です")
 if x=="その他":
-    st.session_state.y=st.number_input("その他の場合はここに税率を入力",format="%d％")
+    st.session_state.y=st.number_input("その他の場合はここに税率を入力(％)",format="%d")
 
 
 
