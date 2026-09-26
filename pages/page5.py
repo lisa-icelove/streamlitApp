@@ -1,4 +1,5 @@
 import streamlit as st
+import math as m
 
 st.title("税込み＆税抜き計算アプリ")
 st.write("消費税の計算をします")
@@ -9,6 +10,8 @@ if "y" not in st.session_state:
     st.session_state.y=0
 if "w" not in st.session_state:
     st.session_state.w=0
+if "s" not in st.session_state:
+    st.session_state.s=0
 
 st.session_state.price=st.number_input("値段を入力してください（円）",format="%d")
 z=st.radio(
@@ -23,7 +26,10 @@ st.write("補足：消費税が8％になるものは飲食料品（※酒類(�
 if x=="その他":
     st.session_state.y=st.number_input("その他の場合はここに税率を入力(％)",format="%d")
 
-
+p=st.radio(
+    "四捨五入、切り捨て、切り上げを選んでください",
+    ["四捨五入","切り捨て","切り上げ"]
+)
 
 col1, col2, col3 = st.columns([1, 2, 1])
 
@@ -44,6 +50,13 @@ with col2:
             elif x=="その他":
                 st.session_state.w = st.session_state.price/(1 + st.session_state.y / 100)
 
+        if p=="四捨五入":
+            st.session_state.s = m.floor(st.session_state.w + 0.5)
+        elif p=="切り捨て":
+            st.session_state.s = m.floor(st.session_state.w)
+        elif p=="切り上げ":
+            st.session_state.s = m.ceil(st.session_state.w)
+
 st.write("---------------------------------------------------------------------------------")
 col1,col2,col3=st.columns([1,2,1])
 with col2:
@@ -51,11 +64,11 @@ with col2:
 st.write("  ")
 if z=="税込み":
     st.write(f"税抜き価格　　　{st.session_state.price}")
-    st.write(f"消費税　　　　　{st.session_state.w-st.session_state.price}")
+    st.write(f"消費税　　　　　{st.session_state.s-st.session_state.price}")
     st.write("---------------------------------------------------------------------------------")
-    st.write(f"税込み価格　　　{st.session_state.w}")
+    st.write(f"税込み価格　　　{st.session_state.s}")
 elif z=="税抜き":
     st.write(f"税込み価格　　　{st.session_state.price}")
-    st.write(f"消費税　　　　　{st.session_state.price-st.session_state.w}")
+    st.write(f"消費税　　　　　{st.session_state.price-st.session_state.s}")
     st.write("---------------------------------------------------------------------------------")
-    st.write(f"税抜き価格　　　{st.session_state.w}")
+    st.write(f"税抜き価格　　　{st.session_state.s}")
